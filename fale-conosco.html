@@ -27,40 +27,88 @@
 					</ul>
 				</nav>
 			</header>
+			
+			<section id="corpo">
+				<article id="noticia-principal">
+					<header id="cabecalho-artigo">
+						<hgroup>
+							<h3>Fale Conosco > Contato</h3>
+							<h1>Formulário de Contato</h1>
+							<h2>por Tiago Henrique</h2>
+							<h3 class="direita">Atualizado em 05/Março/2016</h3>
+						</hgroup>
+					</header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
-
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
-
+					<form method="post" id="fContato" action="mailto:tiago_ho22@hotmail.com">
+						<fieldset id="identificacao">
+							<legend>Identificação do Usuário</legend>
+						    <p><label for="cNome">Nome: </label>
+						    	<input type="text" name="tNome" id="cNome" size="30" maxlength="100" placeholder="Nome Completo"></p>
+						    <p><label for="cSenha">Senha: </label>
+						    	<input type="password" name="tSenha" id="cSenha" size="30" maxlength="20" placeholder="Senha até 20 dígitos"/></p>
+						    <p><label for="cEmail">Email: </label>
+						    	<input type="email" name="tEmail" id="cEmail" size="30" maxlength="30" placeholder="Informe seu Email"/></p>
+						    <fieldset id="sexo">
+						    	<legend>Sexo:</legend>
+						       	<label for="cMasc">Masculino</label>
+						       		<input type="radio" name="tSexo" id="cMasc" checked/><br />
+						        <label for="cFem">Feminino</label>
+						        	<input type="radio" name="tSexo" id="cFem"/>
+						    </fieldset>
+						    <p><label for="cDataNascimento">Data de Nascimento: </label>
+						    	<input type="date" name="tDataNascimento" id="cDataNascimento" /></p>
+					    </fieldset>
+						
+						<fieldset id="endereco">
+							<legend>Endereço do Usuário</legend>
+						    <p><label for="cEndereco">Logradouro: </label>
+						    	<input type="text" name="tEndereco" id="cEndereco" size="30" maxlength="100" placeholder="Rua, Av, Travessa, ...."/></p>
+							<p><label for="cNumero">Número: </label>
+								<input type="number" name="tNumero" id="cNumero" min="0" max="999999" size="10" maxlength="6" placeholder="Número"/></p>
+						    <p><label for="cEstado">Estado: </label>
+						    	<select name="tEstado" id="cEstado">
+						    		<optgroup label="Região Sudeste">
+							    		<option value="RJ">Rio de Janeiro</option>
+							    		<option value="SP">São Paulo</option>
+							    		<option value="MG">Minas Gerais</option>
+							    	</optgroup>
+							    	<optgroup label="Região Sul">
+						    			<option value="SC" selected>Santa Catarina</option>
+						    			<option value="PR">Paraná</option>
+						    			<option value="RS">Rio Grande do Sul</option>
+						    		</optgroup>
+						    	</select></p>
+						    <p><label for="cCidade">Cidade: </label>
+						    	<input type="text" name="tcidade" id="cCidade" size="30" maxlength="50" placeholder="Sua Cidade" list="cidades"/>
+						    	<datalist id="cidades">
+						    		<option value="Rio de Janeiro"></option>
+						    		<option value="Nova Iguaçu"></option>
+						    		<option value="Xanxerê"></option>
+						    		<option value="Curitiba"></option>
+						    	</datalist></p>
+					    </fieldset>
+						
+						<fieldset id="mensagem">
+							<legend>Mensagem do Usuário</legend>
+						   	<p><label for="cUrgencia">Grau de Urgência: </label>
+						   		Mín<input type="range" name="tUrgencia" id="cUrgencia" min="0" max="10" step="2"/>Max</p>
+						    <p><label for="cMensagem">Mensagem: </label>
+						    	<textarea name="tMensagem" id="cMensagem" cols="45" rows="5" placeholder="Digite sua mensagem aqui!"></textarea></p>
+					    </fieldset>
+						
+						<fieldset id="pedido">				
+							<legend>Quero um Google Glass</legend>
+						    <p><label for="cPedido">Gostaria de adquirir um Google Glass quando disponível!</label><input /></p>
+						    <p><label for="cCor">Cor: </label><input /></p>
+						    <p><label for="cQuantidade">Quantidade: </label><input /></p>
+					  		<p><label for="cPreco">Preço Total: R$ </label><input /></p>
+					    </fieldset>					
+					
+						[BOTÃO ENVIAR]
+					</form>
+				</article>
+			</section>
+			
 			<footer id="rodape">
 				<p>Copyright &copy;  2016 <br/> by Tiago Henrique<br/>
 				<a href="http://facebook.com/tiago.murtosa" target="_blank">Facebook</a> | 
