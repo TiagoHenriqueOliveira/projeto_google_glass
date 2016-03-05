@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+form {
+	width: 710px;
+	margin: auto;
+}
+
+fieldset#identificacao p {
+	margin-left: -50px;
+}
+
+fieldset#endereco p {
+	margin-left: -50px;
+}
+
+fieldset#mensagem p {
+	margin-left: -50px;
+}
+
+fieldset#mensagem p textarea {
+	margin-left: 50px;
+}
+
+fieldset#pedido p {
+	margin-left: -50px;
+}
+
+input, textarea {
+	font-family: Arial, Helvetica, sans-serif
+	font-weight: normal;
+	font-size: 12pt;
+	background-color: rgba(255,255,255,.8);
+}
+
+input:hover, textarea:hover {
+	background-color: #DDDDDD;
+}
+
+legend {
+	color: #888888;
+	font-weight: bold;
+	font-size: 13pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+	border-color: #CECECE;
+	margin: 20px;
+}
+
+fieldset#sexo {
+	width: 130px;
+}
+
+fieldset#identificacao {
+	background: url("../_imagens/icone-contato.png") no-repeat 95% 95%;
+}
+
+fieldset#endereco {
+	background: url("../_imagens/icone-endereco.png") no-repeat 95% 95%;
+}
+
+fieldset#mensagem {
+	background: url("../_imagens/icone-mensagem.png") no-repeat 95% 95%;
+}
+
+fieldset#pedido {
+	background: url("../_imagens/icone-pagamento.png") no-repeat 95% 95%;
+}
