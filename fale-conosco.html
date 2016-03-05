@@ -4,8 +4,16 @@
 		<meta charset="UTF-8" />
 		<title>Tudo Sobre o Google Glass</title>
 		<link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+		<link rel="stylesheet" type="text/css" href="_css/form.css" />
 	</head>
 	<script src="_javascript/funcoes.js"></script>
+	<script>
+		function calc_total() {
+			var quantidade = parseInt(document.getElementById('cQuantidade').value);
+			total = quantidade * 1500;
+			document.getElementById('cTotal').value = total;
+		}
+	</script>
 	<body>
 		<div id="interface">
 			<header id="cabecalho">
@@ -28,7 +36,7 @@
 				</nav>
 			</header>
 			
-			<section id="corpo">
+			<section id="corpo-full">
 				<article id="noticia-principal">
 					<header id="cabecalho-artigo">
 						<hgroup>
@@ -39,24 +47,25 @@
 						</hgroup>
 					</header>
 
-					<form method="post" id="fContato" action="mailto:tiago_ho22@hotmail.com">
+					<form method="post" id="fContato" action="Não tem função enviar implementada, pois é um site demonstração!!" oninput="calc_total();">
 						<fieldset id="identificacao">
 							<legend>Identificação do Usuário</legend>
 						    <p><label for="cNome">Nome: </label>
 						    	<input type="text" name="tNome" id="cNome" size="30" maxlength="100" placeholder="Nome Completo"></p>
 						    <p><label for="cSenha">Senha: </label>
 						    	<input type="password" name="tSenha" id="cSenha" size="30" maxlength="20" placeholder="Senha até 20 dígitos"/></p>
+						    <hr />
 						    <p><label for="cEmail">Email: </label>
 						    	<input type="email" name="tEmail" id="cEmail" size="30" maxlength="30" placeholder="Informe seu Email"/></p>
 						    <fieldset id="sexo">
 						    	<legend>Sexo:</legend>
-						       	<label for="cMasc">Masculino</label>
-						       		<input type="radio" name="tSexo" id="cMasc" checked/><br />
-						        <label for="cFem">Feminino</label>
-						        	<input type="radio" name="tSexo" id="cFem"/>
+						       	<input type="radio" name="tSexo" id="cMasc" value="M" checked/>
+						       		<label for="cMasc">Masculino</label><br />
+						       	<input type="radio" name="tSexo" id="cFem" value="F"/>
+						        	<label for="cFem">Feminino</label>
 						    </fieldset>
 						    <p><label for="cDataNascimento">Data de Nascimento: </label>
-						    	<input type="date" name="tDataNascimento" id="cDataNascimento" /></p>
+						    	<input type="date" name="tDataNascimento" id="cDataNascimento" pattern="\d{2}/\d{2}/\d{4}/" title="Mês/Dia/Ano"/></p>
 					    </fieldset>
 						
 						<fieldset id="endereco">
@@ -92,19 +101,25 @@
 							<legend>Mensagem do Usuário</legend>
 						   	<p><label for="cUrgencia">Grau de Urgência: </label>
 						   		Mín<input type="range" name="tUrgencia" id="cUrgencia" min="0" max="10" step="2"/>Max</p>
-						    <p><label for="cMensagem">Mensagem: </label>
+						    <p><label for="cMensagem">Mensagem: </label><br />
 						    	<textarea name="tMensagem" id="cMensagem" cols="45" rows="5" placeholder="Digite sua mensagem aqui!"></textarea></p>
 					    </fieldset>
 						
 						<fieldset id="pedido">				
 							<legend>Quero um Google Glass</legend>
-						    <p><label for="cPedido">Gostaria de adquirir um Google Glass quando disponível!</label><input /></p>
-						    <p><label for="cCor">Cor: </label><input /></p>
-						    <p><label for="cQuantidade">Quantidade: </label><input /></p>
-					  		<p><label for="cPreco">Preço Total: R$ </label><input /></p>
+						    <p><input type="checkbox" name="tPedido" id="cPeiddo" checked/>
+						    	<label for="cPedido">Gostaria de adquirir um Google Glass&reg; quando disponível!</label>
+						    	</p>
+						    <p><label for="cCor">Cor: </label>
+						    	<input type="color" name="tCor" id="cCor" value="#0000FF" /></p>
+						    <p><label for="cQuantidade">Quantidade: </label>
+						    	<input type="number" name="tQuantidade" id="cQuantidade" min="0" max="10" value="0"/></p>
+					  		<p><label for="cPreco">Preço Total: R$ </label>
+					  			<input type="text" name="tTotal" id="cTotal" placeholder="Total à Pagar" readonly/></p>
 					    </fieldset>					
 					
-						[BOTÃO ENVIAR]
+						<!--<input type="submit" value="Enviar" />-->
+						<input type="image" name="btnEnviar" src="_imagens/botao-enviar.png" />
 					</form>
 				</article>
 			</section>
